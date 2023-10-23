@@ -6,5 +6,7 @@ MANIFEST
 .idea
 venv/
 *.sw[po]
-django_sslserver.egg-info/
+django_sslserver_v2.egg-info/
 build/
+django_sslserver_v2/
+.vscode/

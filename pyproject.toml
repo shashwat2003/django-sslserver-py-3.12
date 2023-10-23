@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-sslserver-v2"
+authors = [{ name = "Shashwat", email = "shashwat13.8@gmail.com" }]
+description = "An SSL-enabled development server for Django. Supports latest versions of Django and Python"
+requires-python = ">=2"
+keywords = ["django-sslserver", "sslserver"]
+license = { text = "MIT" }
+classifiers = [
+    "Environment :: Web Environment",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: Django",
+    "Framework :: Django :: 1.8",
+    "Framework :: Django :: 1.9",
+    "Framework :: Django :: 1.10",
+    "Framework :: Django :: 1.11",
+    "Framework :: Django :: 2.0",
+    "Framework :: Django :: 2.1",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.2",
+]
+dependencies = ["Django >= 1.8"]
+dynamic = ["version", "readme"]
+
+
+[tool.setuptools.packages.find]
+where = ["."] # list of folders that contain the packages (["."] by default)
+exclude = [
+    "demo",
+] # exclude packages matching these glob patterns (empty by default)
+namespaces = false # to disable scanning PEP 420 namespaces (true by default)
+
+[tool.setuptools.dynamic]
+version = { attr = "sslserver.__version__" }
+readme = { file = ["README.rst"] }

@@ -1,20 +1,21 @@
-=================
-Django SSL Server
-=================
+====================
+Django SSL Server v2
+====================
 
-.. image:: https://img.shields.io/pypi/v/django-sslserver.svg
-    :target: https://pypi.python.org/pypi/django-sslserver
+.. image:: https://img.shields.io/pypi/v/django-sslserver-v2.svg
+    :target: https://pypi.python.org/pypi/django-sslserver-v2
 
-.. image:: https://img.shields.io/pypi/pyversions/django-sslserver.svg
-    :target: https://pypi.python.org/pypi/django-sslserver/
+.. image:: https://img.shields.io/pypi/pyversions/django-sslserver-v2.svg
+    :target: https://pypi.python.org/pypi/django-sslserver-v2/
 
-Django SSL Server is a SSL-enabled development server for the Django Framework.
+Django SSL Server v2 is a SSL-enabled development server for the Django Framework, a clone of `django-sslserver
+<https://github.com/teddziuba/django-sslserver>`_. This project is actively maintained and supports the latest version of Django and Python.
 
 Please note that this `should not be used for production setups
-<https://docs.djangoproject.com/en/1.11/ref/django-admin/#runserver>`_. This
+<https://docs.djangoproject.com/en/4.2/ref/django-admin/#runserver>`_. This
 app is intended for special use-cases. Most people should instead do a proper
 `production deployment
-<https://docs.djangoproject.com/en/1.11/howto/deployment/>`_ where a real
+<https://docs.djangoproject.com/en/4.2/howto/deployment/>`_ where a real
 webserver such as Apache or NGINX handles SSL.
 
 Getting Started
@@ -22,7 +23,7 @@ Getting Started
 
 Install the module in your Python distribution or virtualenv::
 
-  $ pip install django-sslserver
+  $ pip install django-sslserver-v2
 
 Add the application to your `INSTALLED_APPS`::
 
@@ -78,3 +79,10 @@ Getting Involved
 ================
 
 Feel free to open pull requests or issues. GitHub is the canonical location of this project.
+
+Special Thanks
+===============
+Special thanks to `@teddziuba
+<https://github.com/teddziuba>`_ for building `django-sslserver
+<https://github.com/teddziuba/django-sslserver>`_ and all the `contributers
+<https://github.com/shashwat2003/django-sslserver-v2/blob/master/AUTHORS>`_
