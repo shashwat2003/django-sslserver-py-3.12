@@ -48,10 +48,19 @@ except ImportError:
 class SecureHTTPServer(ThreadedWSGIServer):
     def __init__(self, address, handler_cls, certificate, key, ipv6=False):
         super(SecureHTTPServer, self).__init__(address, handler_cls, ipv6=ipv6)
-        self.socket = ssl.wrap_socket(self.socket, certfile=certificate,
-                                      keyfile=key, server_side=True,
-                                      ssl_version=_ssl_version,
-                                      cert_reqs=ssl.CERT_NONE)
+        try:
+            self.socket = ssl.wrap_socket(self.socket, certfile=certificate,
+                                        keyfile=key, server_side=True,
+                                        ssl_version=_ssl_version,
+                                        cert_reqs=ssl.CERT_NONE)
+        except AttributeError:
+            # Python 3.12 compatibility
+            self.context = ssl.SSLContext(_ssl_version)
+            self.context.load_cert_chain(certificate, key)
+            self.socket = self.context.wrap_socket(
+                self.socket,
+                server_side=True,
+            )
 
 
 class WSGIRequestHandler(WSGIRequestHandler):
